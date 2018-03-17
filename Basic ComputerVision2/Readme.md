@@ -72,12 +72,67 @@
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/format2.png)
 
 ## 영상 처리 프로그래밍 기초
-  ### 1. 2차원 배열의 생성 및 초기화
-  - dd
+  ### 1. 정적 2차원 배열
+  - unsigned char 를 이용하며 1byte를 사용
+  - 2차원 배열 전체 크기만큼의 메모리 공간이 연속적으로 할당
+  - 단점
+    - 배열의 크기를 미리 알고 있어야 한다.(다양한 크기 영상 표현하기 부적절)
+    - `Stack` 에 메모리를 할당 (Stack 은 대략 1MB 밖에 할당하지 못한다. 이 이상되면 죽어버림...)
 
-  ### 2. 대용량 1차원 메모리 할당
+  ```cpp
+  unsigned char a[480][640];
+  ```
+
+  ### 2. 동적 2차원 배열 생성 및 초기화
+  - 행 단위로만 연속된 메모리 공간이 보장됨
+    - 로컬 포인터 변수 공간이 할당
+    - 동적으로 포인터형 공간 할당
+    - 동적으로 데이터 공간을 할당
+  - 프로그램 동작 중 다양한 크기의 영상 생성 가능
+  - `Heap` 에 메모리를 할당 (x64 의 경우 8TB 까지 할당한다.)
+
+  ```cpp
+  int w = 640;
+  int h = 480;
+
+  unsigned char** p;
+  // 연속된 메모리 공간을 생성
+  p = new unsigned char*[h];
+  for (int i = 0; i < h; i++){
+    // 동적 배열 생성
+    p[i] = new unsigned char[w];
+    // p[i] 번지부터 sizeof(unsigned char)*w 바이트 크기만큼의 메모리 공간을 0으로 설정*
+    memset(p[i], 0, sizeof(unsigned char) * w);
+  }
+  ```
+
+  ### 3. 동적 2차원 배열의 원소 접근법 & 메모리 해제
+  - 동적 2차원 배열의 원소 접근법
+    - 2차원 배열 p의 모든 원소 값을 1씩 증가
+    - x좌표 인덱스를 `j` / y좌표 인덱스를 `i` 로 지정함(다르게 해도 됨)
+  - 메모리 해제
+    - 동적 2차원 배열 생성의 역순으로 해제
+    - 괄호 연산자( `[]` ) 사용
+
+  ```cpp
+  // 동적 2차원 배열 원소 접근
+  for (int j = 0; j < h; j++) {
+    for (int i = 0; i < w; i++) {
+      p[j][i] = p[j][i] + 1;
+    }
+  }
+
+  // 동적 2차원 배열의 메모리 해제
+  for(int j=0; j < h; j++){
+    delete[] p;
+  }
+  ```
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/array.png)
+
+  ### 4. 대용량 1차원 메모리 할당
   - ㅇㅇ
 
-  ### 3. 영상 데이터 저장을 위한 영상 클래스 설계
+  ### 5. 영상 데이터 저장을 위한 영상 클래스 설계
   - ㅇㅇ
 ---
