@@ -1,12 +1,95 @@
 # OpenCV Setting
-  - 영상 불러와서 출력
-  - OpenCV API
+  - Basic OpenCV API
     - imread / imwrite
     - namedWindow
     - destroyWindow / destroyAlWindows
     - moveWindow / resizeWindow
     - imshow / waitKey
+  - 영상 불러와서 출력
   - 영상 파일 형식 변환
+
+---
+
+## OpenCV API
+  ### 1. imread
+  - 영상 불러오기
+
+  ```cpp
+  Mat cv::imread( const String & filename,
+                  int flags = IMREAD_COLOR );
+  ```
+
+  - `filename` : 불러올 파일 이름(ex> "lenna.bmp" / "C:\\\\lenna.bmp")
+    - 상대경로 및 절대경로로 불러올 수 있음
+  - `flags` : 영상 불러오기 방식 지정 (디폴트는 트루컬러)
+    - `IMREAD_UNCHANGED` : 영상 속성 그대로 읽기
+    - `IMREAD_GRAYSCALE`   1채널 그레이스케일 영상으로 읽기
+    - `IMREAD_COLOR` : 3채널 트루컬러(BGR) 영상으로 읽기
+
+  ### 2. imwrite
+  - 영상 저장하기
+
+  ```cpp
+  bool cv::imwrite( const String & filename,
+                    InputArray img ,
+                    const std ::vector<int>& params = std ::vector<int>() );
+  ```
+
+  - `params` : 파일 저장 옵션 지정(속성 & 값의 정수 쌍)
+    - ex> vector<int> params(IMWRITE_JPEG_QUALITY, 95);
+
+  ### 3. namedWindow
+  - 새 창 띄우기
+
+  ```cpp
+  void cv::namedWindow( const String & winname,
+                        int flags = WINDOW_AUTOSIZE );
+  ```
+
+  - `winname` : 창 고유 이름
+  - `flags` : 창 옵션
+    - `WINDOW_NORMAL` : 창 크기 지정 가능
+    - `WINDOW_AUTOSIZE` : 창 크기가 자동으로 지정됨
+    - `WINDOW_OPENGL` : OpenGL 지원
+
+  ### 4. destroyWindow & destroyAlWindows
+  - 창 닫기
+
+  ```cpp
+  void cv::destroyWindow( const String & winname );
+  void cv::destroyAlWindows();
+  ```
+
+  - `winname` : 닫고자 하는 창 이름
+  - 일반적인 경우 프로그램 종료 시 운영체제에 의해 열려 있는 모든 창이 자동으로 닫힘
+
+  ### 5. moveWindow
+  - 창 위치 변경
+
+  ```cpp
+
+  ```
+
+  ### 6. resizeWindow
+  - 창 크기 지정
+
+  ```cpp
+
+  ```
+
+  ### 7. imshow
+  - 영상 출력
+
+  ```cpp
+
+  ```
+
+  ### 8. waitKey
+  - 키보드 입력 대기
+
+  ```cpp
+
+  ```
 
 ---
 
@@ -52,54 +135,6 @@
   - 결과
 
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/BasicOpenCV/picture/result1.png)
-
----
-
-## OpenCV API
-  ### 1. imread
-  - 영상 불러오기
-
-  ```cpp
-  Mat cv::imread( const String & filename,
-                  int flags = IMREAD_COLOR );
-  ```
-
-  - `filename` : 불러올 파일 이름(ex> "lenna.bmp" / "C:\\\\lenna.bmp")
-    - 상대경로 및 절대경로로 불러올 수 있음
-  - `flags` : 영상 불러오기 방식 지정 (디폴트는 트루컬러)
-    - IMREAD_UNCHANGED : 영상 속성 그대로 읽기
-    - IMREAD_GRAYSCALE   1채널 그레이스케일 영상으로 읽기
-    - IMREAD_COLOR : 3채널 트루컬러(BGR) 영상으로 읽기
-
-  ### 2. imwrite
-  - 영상 저장하기
-
-  ```cpp
-  bool cv::imwrite( const String & filename,
-      InputArray img ,
-      const std ::vector<int>& params = std ::vector<int>() );
-  ```
-
-  - `params` : 파일 저장 옵션 지정(속성 & 값의 정수 쌍)
-    - ex> vector<int> params(IMWRITE_JPEG_QUALITY, 95);
-
-  ### 3. namedWindow
-  - 새 창 띄우기
-
-  ### 4. destroyWindow & destroyAlWindows
-  - 창 닫기
-
-  ### 5. moveWindow
-  - 창 위치 변경
-
-  ### 6. resizeWindow
-  - 창 크기 지정
-
-  ### 7. imshow
-  - 영상 출력
-
-  ### 8. waitKey
-  - 키보드 입력 대기
 
 ---
 
