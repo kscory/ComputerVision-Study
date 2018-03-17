@@ -47,6 +47,18 @@
     - ex> 카메라에서 얼굴을 찾아 초점을 맞춰주는 것
   - 얼굴 인식(face recognition)
     - 얼굴을 보고 누구인지 판별(얼굴 검출보다 어려우며 다양한 표정을 감지해야 함)
-    - ex> 페이스북 딥 페이스, 구글 포토, MS Cognitive Face API
+    - ex> 페이스북 딥 페이스, 구글 포토, [MS Cognitive Face API](https://azure.microsoft.com/ko-kr/services/cognitive-services/face/)
 
-  
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/face.png)
+
+  ### 3. 내용 기반 영상 검색(Content-based Image Retrieval)
+  - 영상에 존재하는 사람, 사물, 색상 정보 등을 인식하여 유사한 영상을 자동으로 찾아주는 시스템
+  - ex> [구글 이미지 검색](https://www.google.co.kr/imghp), [구글 Cloud Video Intelligence API](https://www.youtube.com/watch?v=mDAoLO4G4CQ&feature=youtu.be)
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/Content.png)
+
+  ### 4. 문자 인식
+  - OCR(ex> Optical Character Recognition)
+  - 문서 영상을 스캐너로 입력 받아 이를 자동으로 텍스트 형태로 저장(ex> Adobe Acrobat))
+  - 스마트폰 카메라로 영어 단어, 문장을 가리키면 다른 언어로 자동 번역 (ex> 구글 번역)
+  - 자동차 번호판 인식
