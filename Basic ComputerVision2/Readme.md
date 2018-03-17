@@ -32,7 +32,7 @@
     - 두 가지 표현법에서 가로세로가 반대로 되어 있으므로 의사소통을 위해서는 어떤 좌표계를 사용했는지 반드시 설명이 필요하다.
   - 그레이스케일과 트루컬러 픽셀값 분포는 다음과 같이 표현할 수 있다.
 
-  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/csip.png)
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/xy.png)
 
   ### 3. 함수로서의 영상
   - `z = f(x,y)` : (x,y) 좌표에서의 픽셀값을 z축 값으로 표현한다.
