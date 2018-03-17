@@ -11,8 +11,7 @@
 ---
 
 ## OpenCV API
-  ### 1. imread
-  - 영상 불러오기
+  ### 1. 영상 불러오기 ( imread )
 
   ```cpp
   Mat cv::imread( const String & filename,
@@ -23,11 +22,10 @@
     - 상대경로 및 절대경로로 불러올 수 있음
   - `flags` : 영상 불러오기 방식 지정 (디폴트는 트루컬러)
     - `IMREAD_UNCHANGED` : 영상 속성 그대로 읽기
-    - `IMREAD_GRAYSCALE`   1채널 그레이스케일 영상으로 읽기
+    - `IMREAD_GRAYSCALE` : 1채널 그레이스케일 영상으로 읽기
     - `IMREAD_COLOR` : 3채널 트루컬러(BGR) 영상으로 읽기
 
-  ### 2. imwrite
-  - 영상 저장하기
+  ### 2. 영상 저장하기 ( imwrite )
 
   ```cpp
   bool cv::imwrite( const String & filename,
