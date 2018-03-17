@@ -59,6 +59,16 @@
 
   ### 4. 문자 인식
   - OCR(ex> Optical Character Recognition)
-  - 문서 영상을 스캐너로 입력 받아 이를 자동으로 텍스트 형태로 저장(ex> Adobe Acrobat))
+  - 문서 영상을 스캐너로 입력 받아 이를 자동으로 텍스트 형태로 저장(ex> Adobe Acrobat)
   - 스마트폰 카메라로 영어 단어, 문장을 가리키면 다른 언어로 자동 번역 (ex> 구글 번역)
   - 자동차 번호판 인식
+  - 주민등록증 자동 인식
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/text.png)
+
+  ### 5. 머신 비전
+  - 사람의 눈을 대신하여 물체를 검사하고 판단하는 기술
+  - 제품의 불량 검사 , 위치 확인 , 측정
+  - 조명 , 렌즈 , 필터 , 실시간(Real-time) 처리
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/machine.png)
