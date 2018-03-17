@@ -72,3 +72,20 @@
   - 조명 , 렌즈 , 필터 , 실시간(Real-time) 처리
 
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/machine.png)
+
+  ### 6. 마커 인식 및 영상 기반 증강 현실
+  - 마커 인식
+    - 정해진 형태의 마커를 인식하여 숨겨진 정보를 추출
+    - 2D 바코드 인식 , QR 코드 인식
+  - 영상 기반 증강 현실
+    - 카메라로 특정 사진을 가리키면 관련된 정보가 증강되어 나타나는 기술
+    - 마커 기반 & 비 마커 기반
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/marker.png)
+
+  ### 7. 인공지능(로봇 및 자율주행차)
+  - 입력 영상을 객체와 배경으로 분할 → 객체와 배경 인식 → 상황 인식 → 로봇과 자동차의 행동 지시
+  - 여러가지 센서 입력을 함께 사용
+  - ex> [Amazon Go](https://www.youtube.com/watch?v=NrmMk1Myrxc) / [구글 , 테슬라의 자율 주행 자동차](https://www.youtube.com/watch?v=wuhbqcMzOaw)
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/ai.png)
