@@ -213,7 +213,15 @@
 
 ## 참고
   ### 1. Image Watch 사용하기
-  - ㅇㅇㅇ
+  - Image Watch란 OpenCV Mat 데이터를 영상 형태로 보여주는 디버깅 툴
+  - 설치 방법
+    - Visual Studio 도구 -> 확장 및 업데이트 -> 온라인 항목 -> Image Watch 검색 및 다운로드(OpenCV 용으로)
+  - 사용하기
+    - 중단점(F9) 설정 후 디버깅 시작(F5)
+    - [보기] -> [다른 창] -> [Image Watch] 선택
+  - 예시
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/BasicOpenCV/picture/result3.png)
 
   ### 2. OpenCV API 도움말 찾기
   - [OpenCV 최신 도움말 링크](https://docs.opencv.org/master/)
