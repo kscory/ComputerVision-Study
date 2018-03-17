@@ -1,4 +1,4 @@
-# Basic
+# Basic Computer Vision
   - 컴퓨터 비전 개요
   - 컴퓨터 비전 응용 분야
   - 영상의 표현 방법
@@ -8,7 +8,14 @@
 
 ## 컴퓨터 비전 개요
   ### 1. 컴퓨터 비전과 영상처리
-  - dd
+  - 컴퓨터 비전과 영상처리는 비슷하게 쓰이며 컴퓨터 비전이 조금 더 high-level 이라고 볼 수 있다.
+    - 영상처리 : 영상 자체의 quality 를 높이기 위한 방법을 연구하는 학문
+    - 컴퓨터 비전 : 영상에서부터 유용한 정보를 뽑아내는 기법을 연구하는 학문
+  - 관점에 따라 아래와 같이 생각할 수 있다.
+    - 유용한 정보 안에 quality 가 포함 vs quality가 높은 것에 유용한 정보 포함
+    - 즉, 둘은 뗄 수 없는 관계에 있다고 생각할 수 있다.
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/csip.png)
 
   ### 2. 컴퓨터 비전의 역사 및 관련분야
   - dd
