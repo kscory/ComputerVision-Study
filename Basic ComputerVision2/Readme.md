@@ -131,8 +131,49 @@
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/array.png)
 
   ### 4. 대용량 1차원 메모리 할당
-  - ㅇㅇ
+  - 1차원 메모리는 아래와 같은 형식으로 저장한다.
+
+  ```cpp
+  int w = 640;
+  int h = 480;
+
+  unsigned char* data;
+  data = new unsigned char[w * h];
+  memset(data, 0, w * h);
+
+  /*
+    로직...
+  */
+
+  delete[] data;
+  ```
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/format3.png)
 
   ### 5. 영상 데이터 저장을 위한 영상 클래스 설계
-  - ㅇㅇ
+  - 위에서 볼 수 있듯 영상 클래스는 헤더와 픽셀 데이터로 나뉜다.
+
+  ```cpp
+  class MyImage MyImage
+  {
+  // 헤더
+  public :
+      MyImage() : w(0), h(0), data(0) {}
+
+      MyImage(int _w , int _h ) : w(_w), h(_h) {
+          data = new unsigned char[w * h];
+      }
+
+      ~MyImage() {
+          if (data) delete[] data;
+      }
+
+      bool create(int_w, int_h);
+
+  // 픽셀 데이터
+  public :
+      int w, h;
+      unsigned char* data;
+  }
+  ```
 ---
