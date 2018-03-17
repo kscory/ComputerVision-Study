@@ -1,8 +1,6 @@
-# Basic Computer Vision
+# Basic Computer Vision 1
   - 컴퓨터 비전 개요
   - 컴퓨터 비전 응용 분야
-  - 영상의 표현 방법
-  - 영상처리 프로그래밍 기초
 
 ---
 
@@ -18,10 +16,21 @@
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/csip.png)
 
   ### 2. 컴퓨터 비전의 역사 및 관련분야
-  - dd
+  - 컴퓨터 비전은 아날로그 방식에서 부터 최근에는 딥러닝에 이용되고 있다.
+  - 컴퓨터 비전은 수학, 데이터 과학, 프로그래밍 등 다양한 분야와 연관되어 있다.
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/history.png)
 
   ### 3. 컴퓨터 비전과 휴먼 비전
-  - dd
+  - 아래 그림의 경우와 같이 컴퓨터 비전과 휴면비전은 여러 환경에 의해 차이가 있다.
+  - 첫번째 그림
+    - 사람 : 착시현상으로 인해 A와 B 가 다르다고 인식한다.
+    - 컴퓨터 : 같은 색으로 인지하며 같은 값을 출력한다.
+  - 두번째 그림
+    - 사람 : 위를 보면 아래가 색상이 다르다고 인식(반대도 동일)
+    - 컴퓨터 : 같은 색으로 인지한다.
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/cvhv.png)
 
 ---
 ## 컴퓨터 비전 응용 분야
