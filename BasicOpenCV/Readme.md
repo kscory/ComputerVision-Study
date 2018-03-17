@@ -61,7 +61,7 @@
 
   ```cpp
   Mat cv::imread( const String & filename,
-      int flags = IMREAD_COLOR );
+                  int flags = IMREAD_COLOR );
   ```
 
   - `filename` : 불러올 파일 이름(ex> "lenna.bmp" / "C:\\\\lenna.bmp")
@@ -75,7 +75,7 @@
   - 영상 저장하기
 
   ```cpp
-  bool cv:: imwrite( const String & filename,
+  bool cv::imwrite( const String & filename,
       InputArray img ,
       const std ::vector<int>& params = std ::vector<int>() );
   ```
