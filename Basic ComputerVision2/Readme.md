@@ -44,13 +44,32 @@
 
 ## 영상 파일 형식
   ### 1. 영상 파일 종류 및 특징
-  - dd
+  - BMP
+    - 데이터를 압축하지 않고 그대로 저장 (파일 용량이 큰 편)
+    - 파일 구조가 간단해서 별도의 라이브러리 도움 없이 직접 파일 입출력 프로그래밍 가능
+  - GIF
+    - 256 이하의 색상을 가진 영상을 저장
+    - 무손실 압축(lossless compression)
+    - 움직이는 GIF 지원 (이것 빼고는 거의 사용하지 않음)
+  - JPG
+    - 트루컬러 영상을 저장하기 위해 사용
+    - 손실 압축(lossy compression)
+    - 압축률이 좋아서 파일 용량이 크게 감소 (디지털 카메라 사진포멧으로 주로 사용)
+  - PNG
+    - Portable Network Graphics
+    - 트루컬러 영상을 포함하여 무손실 압축(lossless compression)을 수행
 
   ### 2. 영상 파일 용량 비교
-  - dd
+  - 아래와 같이 BMP 파일의 경우 픽셀값이 동일하면 용량이 같음
+  - 조금 색이 복잡할 수록 용량이 적게 감소하며 특히 JPG의 경우 크게 나타남
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/formatcom.png)
 
   ### 3. 영상 파일 구조
-  - dd
+  - 영상 파일 형식은 보통 헤더와 픽셀 데이터로 나뉜다.
+  - 아래는 BMP 파일 구조의 예
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision2/picture/format2.png)
 
 ## 영상 처리 프로그래밍 기초
   ### 1. 2차원 배열의 생성 및 초기화
