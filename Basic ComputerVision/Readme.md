@@ -12,6 +12,7 @@
   - 관점에 따라 아래와 같이 생각할 수 있다.
     - 유용한 정보 안에 quality 가 포함 vs quality가 높은 것에 유용한 정보 포함
     - 즉, 둘은 뗄 수 없는 관계에 있다고 생각할 수 있다.
+  - ※ 여기서 영상은 video 가 아니라 video를 포함한 image와 관련된 모든 것들을 영상이라고 한다.
 
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/csip.png)
 
@@ -35,43 +36,17 @@
 ---
 ## 컴퓨터 비전 응용 분야
   ### 1. 영상의 화질 개선
-  - dd
+  - 카메라로 찍은 사진을 더욱 선명하게 하거나 색상을 원하는 형태로 변경하는 작업
+  - ex> HDR(High Dynamic Range), 인스타그램의 필터, 잡음 제거 등
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Basic%20ComputerVision/picture/imagepix.png)
 
   ### 2. 얼굴 검출 및 얼굴 인식
-  - dd
+  - 얼굴 검출(face detection)
+    - 주어진 영상에서 얼굴의 위치 혹은 크기를 찾는 작업
+    - ex> 카메라에서 얼굴을 찾아 초점을 맞춰주는 것
+  - 얼굴 인식(face recognition)
+    - 얼굴을 보고 누구인지 판별(얼굴 검출보다 어려우며 다양한 표정을 감지해야 함)
+    - ex> 페이스북 딥 페이스, 구글 포토, MS Cognitive Face API
 
-  ### 3. 내용 기반 영상 검색
-  - dd
-
-  ### 4. 문자 인식 및 머신 비전
-  - dd
-
-  ### 5. 마커 인식 및 영상 기반 증강 현실
-  - dd
-
-  ### 6. 인공지능 및 자율주행
-  - dd
----
-
-## 영상의 표현 방법
-  ### 1. 그레이스케일(Gray Scale)과 트루컬러(True Color)
-  - dd
-
-  ### 2. 영상 좌표 표현 방법
-  - dd
-
-  ### 3. 영상 파일 형식 및 특징
-  - dd
----
-
-## 영상 처리 프로그래밍 기초
-  ### 1. 2차원 배열의 생성 및 초기화
-  - dd
-
-  ### 2. 대용량 1차원 메모리 할당
-  - ㅇㅇ
-
-  ### 3. 영상 데이터 저장을 위한 영상 클래스 설계
-  - ㅇㅇ
-
----
+  
