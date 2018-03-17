@@ -59,8 +59,29 @@
   ### 1. imread
   - 영상 불러오기
 
+  ```cpp
+  Mat cv::imread( const String & filename,
+      int flags = IMREAD_COLOR );
+  ```
+
+  - `filename` : 불러올 파일 이름(ex> "lenna.bmp" / "C:\\\\lenna.bmp")
+    - 상대경로 및 절대경로로 불러올 수 있음
+  - `flags` : 영상 불러오기 방식 지정 (디폴트는 트루컬러)
+    - IMREAD_UNCHANGED : 영상 속성 그대로 읽기
+    - IMREAD_GRAYSCALE   1채널 그레이스케일 영상으로 읽기
+    - IMREAD_COLOR : 3채널 트루컬러(BGR) 영상으로 읽기
+
   ### 2. imwrite
   - 영상 저장하기
+
+  ```cpp
+  bool cv:: imwrite( const String & filename,
+      InputArray img ,
+      const std ::vector<int>& params = std ::vector<int>() );
+  ```
+
+  - `params` : 파일 저장 옵션 지정(속성 & 값의 정수 쌍)
+    - ex> vector<int> params(IMWRITE_JPEG_QUALITY, 95);
 
   ### 3. namedWindow
   - 새 창 띄우기
