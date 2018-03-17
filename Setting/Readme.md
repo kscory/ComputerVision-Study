@@ -45,7 +45,7 @@
   - OpenCV 는 아래와 같이 구성되어 있다.
   - 출처 : https://opencv.org/wp-content/uploads/2013/icvs/ICVS2013%20-%20OpenCV%203.0.pdf
 
-  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Setting/picture/module.png)
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Setting/picture/structure.png)
 
 ---
 
