@@ -1,7 +1,8 @@
 # OpenCV Setting
   - OpenCV 개요
-  - OpenCV 설치
-  - 프로젝트 만들기 및 속성 추가(Visual Studio)
+  - OpenCV 설치 (pdf)
+  - 프로젝트 설정 (pdf)
+  - 비주얼 스튜디오 설치 (pdf)
 
 ---
 
@@ -50,29 +51,24 @@
 ---
 
 ## OpenCV 설치
-  ### 1. OpenCV 두 가지 설치 방법
-  - dd
+  ### 1. OpenCV 설치 및 프로젝트 설정 방법
+  - [OpenCV 설치 및 프로젝트 설정 방법 ](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Setting/pdf/OpenCV%20install.pdf) 에서 확인 가능 (copyright by 패스트캠퍼스_황선규)
 
-  ### 2. Cmake 설정
-  - dd
-
-  ### 3. 빌드
-  - dd
-
-  ### 4. 환경 변수 등록
-  - ㅇ
-
----
-
-## 프로젝트 생성 및 속성 설정 (with Visual Studio)
-  ### 1. 프로젝트 만들기
-  - dd
-
-  ### 2. 속성 설정
-  - ㅇㅇ
-
-  ### 3. 프로젝트 빌드 및 실행
-  - ㅇㅇ
+  ### 2. 주의사항 및 특이 사항
+  - 소스코드 다운로드
+    - 옵션 선택을 위해 소스 코드를 직접 다운받아 사용한다.
+    - 설치경로는 임의로 정해도 되지만 실습에서는 파일에 나와 있는 대로 진행했다.
+  - CMake 설치
+    - CMake 설정에서 CUDA를 선택하면 시간이 오래걸릴 수 있다. (대략 8시간~9시간)
+    - CMake 설정 시 모든 화면이 하얀색이 나오지 않는다면 [Generate] 버튼을 클릭하지 않도록 한다.
+  - 빌드
+    - 반드시 Debug 모드와 Release 모드에서 모두 빌드하도록 한다.
+  - 환경 변수 등록
+    - 환경 변수 등록 시 Path 를 시스템 변수에 등록하면 dll 파일을 찾지 못할 수도 있으니 주의
+  - 프로젝트 설정
+    - Visual Studio의 경우 `$(OPENCV_DIR)` 과 같이 주로 사용한다.
+    - But> 일반적으로는 `%OPENCV_DIR%` 과 같이 "%" 를 이용한다.
+    - debug 모드와 release 모드에서 lib 파일을 다르게 추가하는 것에 주의
 
 ---
 
