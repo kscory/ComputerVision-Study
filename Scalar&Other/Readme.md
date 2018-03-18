@@ -66,12 +66,71 @@
 
 ## 기타 자료형
   ### 1. Point_ 클래스
-  - ㅇㅇ
+
+  ```cpp
+  template<typename _Tp> class Point_
+  {
+  public :
+      /*...*/
+      _Tp x, y; // < the point coordinates
+  };
+
+  typedef Point_<int>    Point2i ;
+  typedef Point_<int64>  Point2l ;
+  typedef Point_<float>  Point2f ;
+  typedef Point_<double> Point2d ;
+  typedef Point2i        Point;
+  ```
+
+  - 2차원 점의 좌표 표현을 위한 템플릿 클래스
+  - 멤버변수 : `x`, `y`
+  - 멤버 함수 : `dot()`, `ddot()`, `cross()`, `inside()` 등
+  - 다양한 사칙 연산에 대한 연산자 재정의가 되어 있음
+  - 여기서 template 으로 정의되어 있기 때문에 타입을 정해주어야 한다. (타입을 미리 지정해 놓았기 때문에 두가지 방법으로 사용 가능)
+    - `Point_<float> p;` 혹은 `Point2f p;` 으로 선언
+    - `p.x = 100.5f; p.y = 200.3f;` 로 값을 넣는다
 
   ### 2. Size_ 클래스
-  - ㅇㅇ
+
+  ```cpp
+  template<typename _Tp> class Size_
+  {
+  public :
+      /*...*/
+      _Tp width, height; // < the width and the height
+  };
+
+  typedef Size_<int>    Size2i ;
+  typedef Size_<int64>  Size2l ;
+  typedef Size_<float>  Size2f ;
+  typedef Size_<double> Size2d ;
+  typedef Size2i        Size;
+  ```
+
+  - 영상 또는 사각형의 크기 표현을 위한 템플릿 클래스
+  - 멤버 변수 : `width`, `height`
+  - 멤버 함수 : `area()`
+  - 다양한 사칙 연산에 대한 연산자 재정의가 되어 있음
 
   ### 3. Rect_ 클래스
-  - ㅇㅇ
+
+  ```cpp
+  template<typename _Tp> class Rect_
+  {
+  public :
+      /*...*/
+      _Tp x, y, width, height;
+  };
+
+  typedef Rect_<int>    Rect2i ;
+  typedef Rect_<float>  Rect2f ;
+  typedef Rect_<double> Rect2d ;
+  typedef Rect2i        Rect;
+  ```
+
+  - 2차원 사각형 표현을 위한 템플릿 클래스
+  - 멤버 변수 : `x`, `y`, `width`, `height`
+  - 멤버 함수 : `tl()`, `br()`, `size()`, `area()`, `contains()`
+  - 다양한 사칙 연산에 대한 연산자 재정의가 되어 있음
 
 ---
