@@ -133,4 +133,34 @@
   - 멤버 함수 : `tl()`, `br()`, `size()`, `area()`, `contains()`
   - 다양한 사칙 연산에 대한 연산자 재정의가 되어 있음
 
+  ### 4. 예시
+  - Point 연산의 예
+
+  ```cpp
+  Point pt1, pt2(4,3), pt3(2,4);  // pt1=[0,0]
+  int a=2;
+
+  pt1 = pt2 + pt3;        // pt1 = [6, 7]
+  pt1 = pt2 - pt3;        // pt1 = [2, -1]
+  pt1 = pt3 * a;          // pt1 = [4, 8]
+  pt1 = pt3 / a;          // pt1 = [1, 2]
+  pt1 += pt2;             // pt1 = [5, 5]
+  pt1 *= a;               // pt1 = [10, 10]
+  double v = norm(pt2);   // v = 5.0
+  bool b1 = pt1 == pt2;   // false
+  cout << pt1 << endl;    // [1,2]
+  ```
+
+  - Rect 연산의 예
+
+  ```cpp
+  Rect rc1(100, 100, 300, 200);
+  Rect rc2 = rc1 + Point(100,100);    // Shift
+  Rect rc3 = rc1 + Size(-100, 150);   // Expand or shrink
+  Rect rc4 = rc1 & rc2;               // Intersection
+  Rect rc5 = rc1 | rc2;               // Bounding box
+  ```
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Scalar%26Other/picture/other.png)
+
 ---
