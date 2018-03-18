@@ -5,8 +5,10 @@
     - destroyWindow / destroyAlWindows
     - moveWindow / resizeWindow
     - imshow / waitKey
+    - [OpenCV API 도움말](https://docs.opencv.org/master/) 에서 다른 Api 도 검색 가능
   - 영상 불러와서 출력
   - 영상 파일 형식 변환
+  - Image Watch 사용
 
 ---
 
