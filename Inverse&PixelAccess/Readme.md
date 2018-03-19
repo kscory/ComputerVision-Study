@@ -1,14 +1,35 @@
 # Inverse & Pixel Access
-  - 영상의 반전
+  - 영상의 반전(inverse)
   - 픽셀값 접근 방법 (with OpenCV)
   - 연산 시간 측정 방법 (with OpenCV)
   - (참고_pdf)OpenCV 프로젝트 템플릿 만들기
 
 ---
 
-## 영상의 반전
-  ### 1. ㅇ
-  - ㅇ
+## 영상의 반전(Inverse)
+  ### 1. 영상의 반전(inverse)이란?
+  - 영상 내의 모든 픽셀 값을 각각 반전
+  - 밝을 픽셀 → 어둡게 / 어두운 픽셀 → 밝게
+
+  ### 2. 영상의 반전 수식 및 코드
+  - 수식 : `dst(x,y) = 255 - src(x,y)`
+  - int 와 Mat 값을 직접 빼는 것은 operator가 overloading 되어 있기 때문에 가능하다.
+    - 즉, int 가 Scalar 타입으로 변하고 Mat 타입으로 변해서 같은 위치의 픽셀끼리 연산을 하도록 만든다.
+
+  ```cpp
+  Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
+
+	Mat dst;
+	dst = 255 - src;
+
+	imshow("src", src);
+	imshow("dst", dst);
+	waitKey(0);
+
+	return 0;
+  ```
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master//Inverse%26PixelAccess/picture/inverse.png)
 
 ---
 
@@ -34,4 +55,4 @@
   - 프로젝트 생성만으로 디폴트로 특정 이미지 포함시키거나 코드를 미리 만들 수 있다.
 
   ### 3. 프로젝트 템플릿 만들기
-  - [OpenCV 프로젝트 템플릿 만들기 링크](ㅇ) 참고
+  - [OpenCV 프로젝트 템플릿 만들기 링크](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Inverse%26PixelAccess/pdf/OpenCVtemplate.pdf) 참고
