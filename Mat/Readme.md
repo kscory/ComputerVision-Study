@@ -236,9 +236,31 @@
   }
   ```
 
+  - 결과
+
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Mat/picture/result1.png)
 
   ### 4. Mat 클래스 기본 행렬 연산
-  - ㅇㅇ
+  - Mat 클래스는 행렬 연산이 가능하다.
+
+  ```cpp
+  void func4() {
+  	float data[] = { 1,1,2,3 };
+  	Mat mat1(2, 2, CV_32F, data);
+  	cout << "mat:\n" << mat1 << endl;
+
+  	// 역행렬
+  	Mat mat2 = mat1.inv();
+  	cout << "mat2:\n" << mat2 << endl;
+
+  	// 전치행렬
+  	cout << "mat1.t():\n" << mat1.t() << endl;
+
+  	// 사칙연산
+  	cout << "mat1 + 3:\n" << mat1 + 3 << endl;
+  	cout << "mat1 + mat2:\n" << mat1 + mat2 << endl;
+  	cout << "mat1 * mat2:\n" << mat1 * mat2 << endl;
+  }
+  ```
 
 ---
