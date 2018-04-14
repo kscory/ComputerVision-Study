@@ -21,3 +21,24 @@
 
 ### 6. [Scalar & Other Basic class ](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Scalar%26Other)
 > -  Scalar 클래스 / InputArray & OutputArray 클래스 / Point_ 클래스 / Size_ 클래스 / Rect_ 클래스
+
+### 7. [Inverse & Pixel Access ](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Inverse%26PixelAccess)
+> - 영상의 반전 / 픽셀값 접근 방법 (with OpenCV) / 연산 시간 측정 방법 (with OpenCV) / OpenCV 프로젝트 템플릿 만들기(pdf)
+
+### 8.[Brightness](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Brightness)
+> -
+
+### 9.[Contrast](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Contrast)
+> -
+
+### 10.[Trackbar](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Trackbar)
+> -
+
+### 11.[Histogram](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Histogram)
+> -
+
+### 12.[Image Operation](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/ImageOperation)
+> -
+
+### 13.[Filtering 1](https://github.com/Lee-KyungSeok/ComputerVision-Study/tree/master/Filtering)
+> -
