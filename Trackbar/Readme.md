@@ -1,5 +1,8 @@
 # Trackbar & Profile
-  - d
+  - OpenCV API
+    - 트랙바 생성 함수
+  - 트랙바 사용법
+  - 프로파일 사용법
 
 ---
 ## OpenCV API
