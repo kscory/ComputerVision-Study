@@ -114,32 +114,33 @@
 
   ```cpp
   Mat histogram_2(const Mat& src) {
-  	// 1. hist 만들기
-  	CV_Assert(src.type() == CV_8U); // 이미지 타입이 다르다면 에러를 발생
+      // 1. hist 만들기
+      CV_Assert(src.type() == CV_8U); // 이미지 타입이 다르다면 에러를 발생
 
-  	Mat hist;
-  	int channels[] = { 0 };
-  	int dims = 1;
-  	const int histSize[] = { 256 };
-  	float graylevel[] = { 0,256 };
-  	const float* ranges[] = { graylevel };
+      Mat hist;
+      int channels[] = { 0 };
+      int dims = 1;
+      const int histSize[] = { 256 };
+      float graylevel[] = { 0,256 };
+      const float* ranges[] = { graylevel };
 
-  	calcHist(&src, 1, channels, Mat(), hist, dims, histSize, ranges);
+      calcHist(&src, 1, channels, Mat(), hist, dims, histSize, ranges);
 
-  	// 2. grayscale 히스토그램 영상 만들어서 반환
-  	CV_Assert(hist.type() == CV_32F);
-  	CV_Assert(hist.size() == Size(1, 256));
+      // 2. grayscale 히스토그램 영상 만들어서 반환
+      CV_Assert(hist.type() == CV_32F);
+      CV_Assert(hist.size() == Size(1, 256));
 
-  	// 최댓값을 구함
-  	double histMax;
-  	minMaxLoc(hist, 0, &histMax);
+      // 최댓값을 구함
+      double histMax;
+      minMaxLoc(hist, 0, &histMax);
 
-  	Mat imgHist(100, 256, CV_8U, Scalar(255));
-  	for (int i = 0; i < 256; i++) {
-  		line(imgHist, Point(i, 100), Point(i, 100 - cvRound(hist.at<float>(i, 0) * 100 / histMax)), Scalar(0));
-  	}
+      Mat imgHist(100, 256, CV_8U, Scalar(255));
 
-  	return imgHist;
+      for (int i = 0; i < 256; i++) {
+          line(imgHist, Point(i, 100), Point(i, 100 - cvRound(hist.at<float>(i, 0) * 100 / histMax)), Scalar(0));
+      }
+
+      return imgHist;
   }
   ```
 
