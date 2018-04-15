@@ -4,7 +4,7 @@
   - OpenCV API (Mat class)
     - ptr / at
     - operator
-    - coverTo
+    - convertTo
   - Mat 클래스 예제
 
 ---
@@ -134,13 +134,13 @@
   - `colRange` : 관심 열 범위(start, end)
   - 반환값 : rot 부분 행렬/영상 (참조)
 
-  ### 4. 행렬 데이터의 타입 변환 (coverTo)
+  ### 4. 행렬 데이터의 타입 변환 (convertTo)
 
   ```cpp
-  void cv::Mat::converTo( OutputArray m,
-                          int rtype,
-                          double alpha = 1,
-                          double beta = 0) const;
+  void cv::Mat::convertTo( OutputArray m,
+                           int rtype,
+                           double alpha = 1,
+                           double beta = 0) const;
   ```
 
   - `m` : 출력 행렬, 만약 지정된 행렬이 같은 크기나 타입이 아니면 새로 할당
