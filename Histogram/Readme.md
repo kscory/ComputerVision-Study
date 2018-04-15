@@ -32,12 +32,15 @@
     - 모두 같은 깊이와 같은 크기를 가져야 한다. (ex> CV_8U, CV_16U, CV_32F)
   - `nimages` : 영상 배열의 갯수
   - `channels` : 히스토그램을 구할 채널을 나타내는 정수형 배열
+    - 그레이에는 1개의 채널, color 에는 3 채널이 존재하는데 이를 지정하는 것!!
+    - ex> 만약 image1은 R, image2 는 B 영상을 원한다면 {2,3} 을 대입
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/channel.png)
   - `mask` : 마스크 영상 (원소의 값이 0이 아닌 원소 위치에서 연산 수행)
     - __Mat()__ 혹은 __noArray()__ 를 지정하여 입력 영상 전체에서 히스토그램을 구할 수 있다.
   - `hist` : 출력되는 히스토그램 (dims-차우너 배열)으로 Mat or SparseMat
   - `dims` : 출력 히스토그램 차원
   - `histSize` : 히스토그램 각 차원의 크기
-    - 각 차원의 `bin` 의 갯수를 나타내는 배열
+    - 각 차원의 `bin` 의 갯수를 나타내는 배열 (빈도수를 분류할 칸의 개수)
   - `ranges` : 히스토그램 각 차원의 최솟값과 최댓값을 원소로 갖는 배열의 배열 (uniform = true 인 경우)
   - `uniform` : `bin` 의 간격을 균등 분할할 지 결정
   - `accumulate` : 누적 플래그
@@ -77,7 +80,7 @@
   - 영상의 픽셀 값 분포를 그래프의 형태로 표현
   - ex1> 그레이 스케일 값의 개수를 구하고 이를 막대 그래프로 나타냄
     - `h(g) = N_g`
-  - ex2> 0~3, 4~7 등을 뭉쳐서 그 범위의 갯수를 구하고 그래프로 나타냄
+  - ex2> 0\~3, 4\~7 등을 뭉쳐서 그 범위의 갯수를 구하고 그래프로 나타냄
 
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/histogram.png)
 
@@ -90,11 +93,55 @@
 
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/histogram2.png)
 
-  ### 3. 다양한 영상에 따른 히스토그램
-  - ㅇㅇ
+  ### 3. 영상과 히스토그램
+  - 히스토그램을 보면 어떤 밝기가 어디서 사용되었는지를 알 수 있다.
+  - 여러 영상에 따라 히스토그램이 다르게 나타난다.
+    - __밝은 영상__ : 오른쪽으로 치우쳐짐
+    - __어두운 영상__ : 왼쪽으로 치우쳐짐
+    - __명암비가 높은 영상__ : 전체적으로 퍼져있음
+    - __명암비가 낮은 영상__ : 가운데에 몰려 있음
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/histogram3.png)
 
   ### 4. 구현
-  - ㅇㅇ
+  - 먼저 hist 영상을 만들고
+    - 그레이스케일 1 채널
+    - 1차원 배열의 히스토그램
+    - 빈도수는 256개로 분류
+    - 범위는 0 에서 256 까지 지정
+  - 그 뒤 grayscale 히스토그램 영상을 만들어서 반환 한다.
+  - 직접 구현은 [코드]() 참고
+
+  ```cpp
+  Mat histogram_2(const Mat& src) {
+  	// 1. hist 만들기
+  	CV_Assert(src.type() == CV_8U); // 이미지 타입이 다르다면 에러를 발생
+
+  	Mat hist;
+  	int channels[] = { 0 };
+  	int dims = 1;
+  	const int histSize[] = { 256 };
+  	float graylevel[] = { 0,256 };
+  	const float* ranges[] = { graylevel };
+
+  	calcHist(&src, 1, channels, Mat(), hist, dims, histSize, ranges);
+
+  	// 2. grayscale 히스토그램 영상 만들어서 반환
+  	CV_Assert(hist.type() == CV_32F);
+  	CV_Assert(hist.size() == Size(1, 256));
+
+  	// 최댓값을 구함
+  	double histMax;
+  	minMaxLoc(hist, 0, &histMax);
+
+  	Mat imgHist(100, 256, CV_8U, Scalar(255));
+  	for (int i = 0; i < 256; i++) {
+  		line(imgHist, Point(i, 100), Point(i, 100 - cvRound(hist.at<float>(i, 0) * 100 / histMax)), Scalar(0));
+  	}
+
+  	return imgHist;
+  }
+  ```
 
 ---
 
