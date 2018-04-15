@@ -169,31 +169,31 @@
   ```cpp
   int main(void)
   {
-  	Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
+      Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
 
       ...
 
-  	double gMax, gMin;
-  	minMaxLoc(src, &gMin, &gMax);
+      double gMax, gMin;
+      minMaxLoc(src, &gMin, &gMax);
 
-  	Mat dst;
+      Mat dst;
+      // 히스토그램 스트레칭 이용
+      dst = (src - gMin) / (gMax - gMin) * 255;
 
-    // 히스토그램 스트레칭 이용
-  	dst = (src - gMin) / (gMax - gMin) * 255;
+      imshow("src", src);
+      imshow("dst", dst);
 
-  	imshow("src", src);
-  	imshow("dst", dst);
-
-  	waitKey(0);
-  	return 0;
+      waitKey(0);
+      return 0;
   }
   ```
 
 ---
 
-## 히스토그램 평활화
+## 히스토그램 평활화(균등화, 평탄화)
   ### 1. 히스토그램 평활화란?
-  - ㅇㅇ
+  - 히스토그램의 누적 분포 특성에 근거해서 히스토그램의 분포를 변경시키는 방법
+  
 
   ### 2. 히스토그램 평활화 변환 함수 및 계산 방법
   - ㅇㅇ
