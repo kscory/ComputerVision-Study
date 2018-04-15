@@ -1,6 +1,7 @@
 # Trackbar & Profile
   - OpenCV API
     - 트랙바 생성 함수
+    - 직선 그리기
   - 트랙바 사용법
   - 프로파일 사용법
 
@@ -15,7 +16,7 @@
                           int count,
                           TrackbarCallback onChange = 0,
                           void * userdata = 0
-  )
+  );
   ```
 
   - `trackbarname` : 트랙바 이름
@@ -25,6 +26,22 @@
   - `onChange` : 슬라이더 위치가 바뀔 때 실행될 __콜백함수__
     - 콜백함수 형식 : `void function (int, void*)`
   - `userdata` : 콜백 함수에 전달할 데이터(전역변수 대체 가능)
+
+  ### 2. 직선 그리기
+
+  ```cpp
+  void cv::line( InputOutputArray img,
+                Point pt1,
+                Point pt2,
+                const Scalar & color,
+                int thickness = 1,
+                int lineType = LINE_8,
+                int shift = 0
+  );
+  ```
+
+  - `img` 영상에 `pt1` 좌표부터 `pt2` 좌표까지 `color` 색상으로 thickness 두께로 직선을 그린다.
+  - `lineType` 의 디폴트는 LINE_8 로 매끄러운 직선을 뜻함
 
 ---
 
