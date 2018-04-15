@@ -2,6 +2,8 @@
   - OpenCV API
     - 히스토그램 구하기 (calcHist)
     - 행렬의 최솟값/최댓값 & 해당 위치 구하기 (minMaxLoc)
+    - Assert 매크로 함수
+    - 히스토그램 평활화 함수 (equalizeHist)
   - 히스토그램 기본
   - 히스토그램 스트레칭
   - 히스토그램 평활화
@@ -72,6 +74,17 @@
 
   - 실행 시 조건을 판단하여, 실패 시 에러를 발생
   - CV_Dbg_Assert() 매크로는 디버그 모드에서만 동작한다.
+
+  ### 4. 히스토그램 평활화 함수(equalizeHist)
+
+  ```cpp
+  void cv::equalizeHist	(	InputArray src,
+                          OutputArray dst
+  )
+  ```
+
+  - 입력영상을 받아 출력영상에 평활화를 해주는 함수
+  - 단 8비트 1채널 영상만 입력
 
 ---
 
@@ -193,20 +206,45 @@
 ## 히스토그램 평활화(균등화, 평탄화)
   ### 1. 히스토그램 평활화란?
   - 히스토그램의 누적 분포 특성에 근거해서 히스토그램의 분포를 변경시키는 방법
-  
+  - 히스토그램 누적 분포 함수의 경우 직선과 거의 비슷해진다.
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/equalization.png)
 
   ### 2. 히스토그램 평활화 변환 함수 및 계산 방법
-  - ㅇㅇ
+  - 히스토그램 평활화 함수
 
-  ### 3. 히스토그램 누적 분포 함수 비교
-  - ㅇㅇ
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/equalization2.png)
 
-  ### 4. 구현
+  - 평활화 계산 방법
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/equalization3.png)
+
+  ### 3. 구현
+  - equalizeHist() 함수를 이용해 쉽게 구현 가능
+  - 공식을 이용해 구하는 건 [코드](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/equalization/main.cpp) 참고
+
+  ```cpp
+  int main(void)
+  {
+      Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
+
+      Mat dst(src.rows, src.cols, src.type());
+
+      // equalizeHist 함수 이용
+      equalizeHist(src, dst);
+      imshow("src", src);
+      imshow("dst", dst);
+
+      waitKey(0);
+      return 0;
+  }
+  ```
 
 ---
 
 ## 참고
   ### 1. 히스토그램 스트레칭 vs 히스토그램 평활화
+  - 스트레칭의은 빈칸이 일정하지만 평활화는 빈칸이 균일하다.
   - (1) 번의 경우 평활화가 더 좋다
   - (2) 번의 경우 둘 다 별로다.
   - 보통 (1) 과 같이 평활화가 좋게 나타나는 경우가 많지만 (2) 와 같이 많이 안좋아질 때가 있다.
