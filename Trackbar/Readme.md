@@ -7,7 +7,7 @@
 
 ---
 ## OpenCV API
-  ### 1. 트랙바 생성 함수
+  ### 1. 트랙바 생성 함수 (createTrackbar)
 
   ```cpp
   int cv::createTrackbar( const String & trackbarname,
@@ -27,7 +27,7 @@
     - 콜백함수 형식 : `void function (int, void*)`
   - `userdata` : 콜백 함수에 전달할 데이터(전역변수 대체 가능)
 
-  ### 2. 직선 그리기
+  ### 2. 직선 그리기 (line)
 
   ```cpp
   void cv::line( InputOutputArray img,
