@@ -1,5 +1,6 @@
 # Contrast
-  - dd
+  - 명압비란?
+  - 다양한 명암비 조절 방법
 
 ---
 
@@ -57,8 +58,8 @@
   ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Contrast/picture/contrast2.png)
 
   ### 4. 평균 밝기를 고려한 명암비 조절 방법
-  - 영상의 평균 밝기 m 을 구하고 (m,m)을 지나는 직선을 변환 함수로 사용
   - `g(x, y) = f (x, y) + ( f (x, y) - m) * α`
+  - 영상의 평균 밝기 m 을 구하고 (m,m)을 지나는 직선을 변환 함수로 사용
 
   ```cpp
   int main(int argc, char* argv[])
