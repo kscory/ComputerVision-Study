@@ -110,7 +110,7 @@
     - 빈도수는 256개로 분류
     - 범위는 0 에서 256 까지 지정
   - 그 뒤 grayscale 히스토그램 영상을 만들어서 반환 한다.
-  - 직접 구현은 [코드]() 참고
+  - 직접 구현은 [코드](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/histogram/main.cpp) 참고
 
   ```cpp
   Mat histogram_2(const Mat& src) {
@@ -147,13 +147,46 @@
 
 ## 히스토그램 스트레칭
   ### 1. 히스토그램 스트레칭이란?
-  - ㅇㅇ
+  - 영상의 히스토그램이 그레이스케일 전 구간에서 걸쳐 나타나도록 변경하는 선형 변환 기법
 
-  ### 2. 히스토그램 스트레칭 변환 함수
-  - ㅇㅇ
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/streching3.png)
+
+  ### 2. 히스토그램 스트레칭 변환 함수 및 유도
+  - 최소를 0으로, 최대를 255로 바꿔서 특정 비율을 각각 곱해준다.
+  - 수식 (grayscale은 0 - 255 값을 가짐)
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/streching1.png)
+
+
+  - 아래 그림과 같이 직선의 방정식을 구해서 유도
+
+  ![](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/picture/streching2.png)
 
   ### 3. 구현
-  - ㅇㅇ
+  - 픽셀 접근하여 구하는 법은 [코드](https://github.com/Lee-KyungSeok/ComputerVision-Study/blob/master/Histogram/streching/main.cpp) 참고
+
+  ```cpp
+  int main(void)
+  {
+  	Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
+
+      ...
+
+  	double gMax, gMin;
+  	minMaxLoc(src, &gMin, &gMax);
+
+  	Mat dst;
+
+    // 히스토그램 스트레칭 이용
+  	dst = (src - gMin) / (gMax - gMin) * 255;
+
+  	imshow("src", src);
+  	imshow("dst", dst);
+
+  	waitKey(0);
+  	return 0;
+  }
+  ```
 
 ---
 
